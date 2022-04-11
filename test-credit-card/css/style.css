@@ -1,75 +1,127 @@
-form {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.3);
-    box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
-    background-color: #e9e9e3;
-    margin: 50px auto 50px;
-    padding: 34px 44px 57px;
-    width: 400px;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-h2{
-    text-align: center;
-}
-.error{
-    border-image: linear-gradient(45deg,red,#d993cc) 10;
+html,
+body {
+    height: 100%;
+    width: 100%;
 }
 
-input:focus-visible{
-    outline: none;
+body {
+    background-color: #d5d5d5;
+    overflow: hidden;
+    margin: 0px;
 }
-        form .cc {
-            background-image: url(../images/images.png),url(../images/images.png);
-            background-position: 252px -122px,15px -61px;
-            background-size: 120px 375px,120px 392px;
-            background-repeat: no-repeat;
-            padding-left: 54px;
-            box-sizing: border-box;
+
+@media(max-width:767px) {
+    .card-bounding.card-wrapper {
+        padding: 30px 10px 10px 10px;
+    }
+    .card-wrapper .card-container input {
+        font-size: 18px;
+    }
+    .card-wrapper .card-type {
+        top: 0px;
+    }
 }
-form input {
-    background-color: #fff;
-    color: #333;
-    display: block;
-    font-size: 18px;
-    height: 42px;
-    padding: 0 5px;
+
+.card-bounding {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 40px;
+    border-radius: 6px;
+    font-family: 'Roboto';
+    background: #ffffff;
+}
+
+input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #0000001c;
+}
+
+.card-container {
     width: 100%;
-    border-image: linear-gradient(45deg,#f99bf9,#3bc3bc) 10;
-    border-radius: 3px;
+    padding-right: 40px;
+    position: relative;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    margin: 0 auto 0px auto;
+    border-image: linear-gradient(45deg, #f99bf9, #3bc3bc) 10;
+    border-radius: 8px;
     box-shadow: 0 1px 17px rgb(0 0 0 / 11%);
+    padding: 4px;
+    margin-top: 21px;
 }
-form .cc.visa {
-    background-position: 255px -165px,14px -61px;
+
+.card-container input {
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 30px;
+    padding: 15px 15px 15px 25px;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
 }
-form .cc.mastercard {
-    background-position: 255px -252px,15px -61px;
+
+.card-type {
+    width: 80px;
+    height: 56px;
+    background: url("file:///C:/Users/Surbhi/Downloads/js-CreditCardValidator-master/js-CreditCardValidator-master/images/cards.png");
+    background-position: 0 -291px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 7px;
+    right: 4px;
 }
-form .cc.discover {
-    background-position: 255px -339px,16px -61px;
+
+.card-type.invalid-card::before {
+    content: 'x';
+    color: #fff;
+    font-weight: 300;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    line-height: 56px;
+    background: #e5dddd;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    margin: auto;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
 }
-form .cc.amex {
-    background-position: 255px -208px,15px -62px;
+
+.card-type.invalid-card {
+    background: none;
+    display: flex;
 }
-form .cc.visa.verified {
-    background-position: 255px -165px,16px -91px;
+
+.card-type.mastercard {
+    background-position: 0 0;
 }
-form .cc.mastercard.verified {
-    background-position: 255px -252px,16px -91px;
+
+.card-type.visa {
+    background-position: 0 -115px;
 }
-form .cc.discover.verified {
-    background-position: 255px -339px,14px -91px;
+
+.card-type.amex {
+    background-position: 0 -57px;
 }
-form .cc.amex.verified {
-    background-position: 255px -208px,15px -91px;
+
+.card-type.discover {
+    background-position: 0 -174px;
 }
-.error + p{
-    display: block;
+
+.invalid-form {
+    border-image: linear-gradient(45deg, red, #d993cc) 10;
 }
-p{
-    display: none;
+
+.error-message {
     color: red;
+    min-height: 20px;
+    margin: 10px 0px 0px;
 }

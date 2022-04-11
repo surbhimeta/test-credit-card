@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,16 +8,19 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
-    <div class="main">
-    <form>
-        <h2>Credit Card validation App</h2>
-    <input type="text" name="card_number" id="card_number" placeholder="1234 5678 9012 3456" class="cc">
-           <p>Number is invalid</p>
 
-    </form>
-</div>
+<body>
+    <div class="card-bounding card-wrapper">
+        <form class="card-container">
+            <div class="card-type"></div>
+
+            <input type="text" name="card_number" maxlength="19" id="card_number" placeholder="1234 5678 9012 3456" class="cc" />
+            <div class="card-valid"></div>
+        </form>
+        <p class="error-message" style="color: red;"></p>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/custom.js"></script>
 </body>
+
 </html>
